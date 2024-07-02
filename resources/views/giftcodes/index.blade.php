@@ -40,7 +40,7 @@
                                         <tr>
                                             <td><a>{{ $loop->index + 1}}</a></td>
                                             <td><a href="/giftcodes/{{$item->id}}/edit">{{$item->giftcode}}</a></td>
-                                            <td>{{\Carbon\Carbon::parse($item->expired)->format("d/m/Y")}}</td>
+                                            <td>{{$item->is_vip ? "Vĩnh Viễn" : \Carbon\Carbon::parse($item->expired)->format("d/m/Y")}}</td>
                                             <td>{{$item->itemid}}</td>
                                             <td>{{!$item->is_vip ? "Tất cả thành viên" : "Chỉ dành cho VIP ".$item->vip_level}}</td>
                                             <td>{{$item->count }}
